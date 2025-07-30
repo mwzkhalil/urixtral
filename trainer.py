@@ -14,9 +14,8 @@ from data import prepare_dataset
 from inference import topk_sampling, save_to_file
 
 
-# -----------------------------------------------------------
-# Checkpoint helpers
-# -----------------------------------------------------------
+############## Checkpoint helpers #############################
+
 def _save_snapshot(model, optimizer, scheduler, epoch, step, model_name="urixtral"):
     snapshot = {
         "MODEL_STATE": model.state_dict(),
@@ -42,9 +41,8 @@ def _load_snapshot(snapshot_path, model, optimizer, scheduler):
     return epoch, step
 
 
-# -----------------------------------------------------------
-# Custom LR scheduler (cosine with warmup)
-# -----------------------------------------------------------
+####################### Custom LR scheduler (cosine with warmup) ##########################
+
 class CustomLRScheduler:
     def __init__(self, optimizer, warmup_iters, lr_decay_iters, min_lr, max_lr):
         self.optimizer = optimizer
@@ -91,9 +89,8 @@ class CustomLRScheduler:
         self.it = state_dict["it"]
 
 
-# -----------------------------------------------------------
-# Main training routine
-# -----------------------------------------------------------
+############################## Main training ##############################
+
 # def train(model_args=None):
 #     if model_args is None:
 #         model_args = create_model_args()
@@ -274,7 +271,7 @@ def train(model_args=None):
         tokenizer=tokenizer
     ).to(model_args.device)
 
-    # ✅ Use torch.compile if requested
+    # torch.compile 
     if model_args.use_compile:
         model = torch.compile(model)
 
@@ -411,13 +408,10 @@ def train(model_args=None):
     os.makedirs(output_dir, exist_ok=True)
     model.save_pretrained(output_dir)
     tokenizer.tokenizer.save_pretrained(output_dir)
-    print(f"Model saved in HuggingFace format at {output_dir}")
+    print(f"Model saved in HuggingFace format {output_dir}")
     wandb.finish()
 
 
-# -----------------------------------------------------------
-# Entrypoint
-# -----------------------------------------------------------
 if __name__ == "__main__":
     torch.backends.cuda.matmul.allow_tf32 = True
     torch.backends.cudnn.allow_tf32 = True
