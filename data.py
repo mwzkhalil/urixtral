@@ -1,4 +1,3 @@
-# data.py  (Urdu-only)
 import torch
 from torch.utils.data import DataLoader
 from datasets import load_dataset
@@ -19,7 +18,7 @@ def clean_urdu_text(text):
     text = text.strip()
     return text if (is_urdu(text) and len(text) >= 10) else None
 
-############3 main entry ###################
+###########3 main entry ###################
 _URDU_TRAIN = None
 _URDU_TEST  = None
 
