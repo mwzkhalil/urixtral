@@ -8,7 +8,7 @@ A PyTorch implementation of a Mixtral inspired transformer model with Mixture of
 
 Provided under the `generated_data/` directory, these examples showcase the model's capabilities in text generation and understanding.
 
-![SmolUrixtral Model](images/loss.jpg)
+![SmolUrixtral Model](images/loss.png)
 
 ## Model Weights
 **💾 Download Pre-trained Weights**: 
