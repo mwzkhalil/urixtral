@@ -2,7 +2,7 @@
 
 A PyTorch implementation of a Mixtral inspired transformer model with Mixture of Experts (MoE), designed for text generation and understanding tasks. This model is built on the Mixtral architecture with enhancements like Flash Attention, SWiGLU activation, and Liger kernels for optimized performance.
 
-- So, I trained a MoE based a 124M (8x12M) architecture I coded from ground up.
+- So, I trained a MoE based a 53M architecture.
 - Trained on Urdu-1M-news-text dataset from HuggingFace consisting of 1M texts for a total of 800 steps
 ## Examples
 
