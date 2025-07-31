@@ -73,4 +73,6 @@ Provided under the `generated_data/` directory, these examples showcase the mode
 - `vocab_size`: Vocabulary size (default: based on tokenizer + 768)
 - `val_epochs`: Validation frequency (default: 2)
 
+## License
 
+MIT License
