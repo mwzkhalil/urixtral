@@ -9,9 +9,9 @@ class Tokenizer:
         if hf_token is None:
             hf_token = os.environ.get('HF_TOKEN')
         if hf_token and hf_token != '...':
-            print(f"[INFO] Using HF token for model access")
+            print(f"Using HF token for model access")
         else:
-            print("[INFO] No HF token provided - using public models only")
+            print("No HF token provided - using public models only")
             hf_token = None
         if dataset == 'urdu':
             model_dir = 'urdu_tokenizer'
